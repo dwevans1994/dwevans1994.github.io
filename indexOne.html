@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+Happy days
+</head>
+<body>
+      
+            <br>
+            <button type="text" id="Text1" onclick="add();"; name="Box1">First Number</button>
+            <br>
+			<br>
+            <button type="text" id="Text2" onclick="square();" name="Box2">Second Number</button>
+            <br>
+			<h3> Person Object</h3>
+			<input type="text" id="name"  name="TextBox1"> name </input>
+            <br>
+			<br>
+            <input type="text" id="age" name="TextBox2"> age </input>
+            <br>
+			<br>
+            <input type="text" id="occ" name="TextBox3"> occupation </input>
+            <br>
+			<br>
+            <button type="button" id="create" onclick="create_person()";> create</button>
+            <br>
+            <br>
+            <button type="button" id="later" onclick="year_later()";> 1 Year Later</button>
+            <br>
+			 <br>
+            <button type="button" id="elliott" onclick="elliott()";> display elliott</button>
+            <br>
+			<br>
+            <button type="button" id="conco" onclick="coco()";> concatinate</button>
+            <br>
+			<br>
+            <input type="text" id="arrayItem" name="TextBox3"></input>
+			<button type="button" id="showArray" onclick="showArray();">Show current array</button>
+            <button type="button" id="addTOArray" onclick="addArray();">add</button>
+			<button type="button" id="deleteFromArray" onclick="deleteFromArray();"> delete</button>
+            <br>
+			
+	
+        <script type="text/javascript">
+		
+		var person ={name: "", age: 0, occupation: ""};
+		
+		var myList = ['Rugby','Football','Lacrosse'];
+		
+		
+		var num1 = 6
+		var num2 = 10
+		var num3 = 3
+		
+		function square(num1) {
+		
+		alert(num1 * num1)
+		return num1*num1;
+		}
+		
+		function add(num1,num2,num3){
+		alert(num1 + num2 + num3)
+		return num1 + num2 + num3;
+		}
+		
+		function create_person(){
+		person.name = document.getElementById("name").value
+		person.age = document.getElementById("age").value *1
+		person.occ = document.getElementById("occ").value
+		alert("name: " + person.name + "\nage: " + person.age + "\noccupation: " + person.occ)
+		
+		}
+		function year_later(){
+		var newValue = person.age ++
+		alert("name: " + person.name + "\nage: " + person.age + "\noccupation: " + person.occ)
+		}
+		function elliott() {
+		var str = "\"My name is elliott\"";
+		var res = str.toUpperCase();
+		document.getElementById("elliott").innerHTML = res;
+		}
+		function coco(){
+		var x = "Hello" + "dylan"  + " Concatenates int";
+		var y = "5" + 5 + " Concatenates string and int";
+		var z = "Hello" + 5 + " Concatenates string and int";
+		alert(x + " " + y + " " + z);
+		}
+		function deleteFromArray(){
+		delete list[#];
+		myList.splice(1,1); //to completely remove it, no hole
+		delete myList[1];
+		//[a,undefined,c,d];
+		myList.sp
+		}
+		function addArray(){
+		var item = document.getElementById("arrayItem").value
+		myList.push(item);
+		}
+		function showArray(){
+		alert(showArray)
+		}
+        </script>
+		</body>
+</html>

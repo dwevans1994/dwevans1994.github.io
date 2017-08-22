@@ -1,0 +1,4 @@
+var variableString = “hi”
+var variableNumber = 3
+var variableObject = { name:”Elliott” }
+window.alert(variableObject.name);
