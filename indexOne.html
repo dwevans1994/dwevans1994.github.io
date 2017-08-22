@@ -24,7 +24,8 @@ Happy days
             <button type="button" id="create" onclick="create_person()";> create</button>
             <br>
             <br>
-            <button type="button" id="later" onclick="year_later()";> 1 Year Later</button>
+			<button type="button" id="later" onclick="year_later()";> 1 Year Later</button>
+			<button type="button" id="check" onclick="checkNumber()";> Check</button>
             <br>
 			 <br>
             <button type="button" id="elliott" onclick="elliott()";> display elliott</button>
@@ -85,19 +86,32 @@ Happy days
 		alert(x + " " + y + " " + z);
 		}
 		function deleteFromArray(){
-		delete list[#];
-		myList.splice(1,1); //to completely remove it, no hole
-		delete myList[1];
-		//[a,undefined,c,d];
-		myList.sp
+		myList.pop();
 		}
 		function addArray(){
-		var item = document.getElementById("arrayItem").value
+		var item = document.getElementById("arrayItem").value;
 		myList.push(item);
 		}
 		function showArray(){
-		alert(showArray)
+		alert(myList)
 		}
+		function checkNumber () {
+		
+		var entered = "You entered a number between"; 
+
+		if (person.age >= 1 && person.age < 19)                   
+  			{alert(entered + " 0 and 19")}
+		else if (person.agen >= 20 &&person.age < 30)
+  			{alert(entered + " 19 and 30")}
+		else if (person.age >= 30 && person.age < 40)
+  			{alert(entered + " 29 and 40")}
+		else if (person.age < 1 || person.age > 100)
+  			{alert("You entered a number less than 1 or greater than 100")}
+		else if (person.age > 100)
+  			{alert("You entered a number greater than 100")}
+		else
+  		{alert("You did not enter a number!")}
+}
         </script>
 		</body>
 </html>
