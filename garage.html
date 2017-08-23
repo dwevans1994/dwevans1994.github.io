@@ -1,0 +1,47 @@
+<head>
+
+    <link rel="stylesheet" type="text/css" href="indexOneJS.css">
+
+</head>
+
+<body>
+    <div id=div1>
+        <br>
+        <input type="text_make" id="make" name="TextBox1">Vehicle Make </input>
+        <br>
+        <br>
+        <input type="text_model" id="model" name="TextBox1">Model </input>
+        <br>
+        <br>
+        <input type="text_age" id="age" name="TextBox2">Age</input>
+        <br>
+        <br>
+        <input type="text_milage" id="milage" name="TextBox3"> Milage</input>
+        <br>
+        <br>
+        <button type="text" id="Text1" onclick="create_vehicle();" ; name="Box1">Check in vehicle</button>
+        <br>
+    </div>
+    <div id=div2>
+        <br>
+        <button type="text" id="show" onclick="showVehicles();" ; name="Box2">Show Vehicles</button>
+    </div>
+</body>
+<script type="text/javascript">
+    var vehicle = { make: "", model: "", age: 0, milage: 0 };
+    var vehicles = [];
+
+    function create_vehicle() {
+        vehicle.make = document.getElementById("make").value
+        vehicle.model = document.getElementById("model").value
+        vehicle.age = document.getElementById("age").value * 1
+        vehicle.milage = document.getElementById("milage").value * 1
+        vehicles.push(vehicle);
+        console.log(vehicles);
+    }
+
+    function showVehicles() {
+        alert(vehicles)
+    }
+
+</script>

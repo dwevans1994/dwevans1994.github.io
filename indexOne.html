@@ -1,117 +1,332 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-Happy days
+
+	<link rel="stylesheet" type="text/css" href="indexOneJS.css">
+
 </head>
+
 <body>
-      
-            <br>
-            <button type="text" id="Text1" onclick="add();"; name="Box1">First Number</button>
-            <br>
-			<br>
-            <button type="text" id="Text2" onclick="square();" name="Box2">Second Number</button>
-            <br>
-			<h3> Person Object</h3>
-			<input type="text" id="name"  name="TextBox1"> name </input>
-            <br>
-			<br>
-            <input type="text" id="age" name="TextBox2"> age </input>
-            <br>
-			<br>
-            <input type="text" id="occ" name="TextBox3"> occupation </input>
-            <br>
-			<br>
-            <button type="button" id="create" onclick="create_person()";> create</button>
-            <br>
-            <br>
-			<button type="button" id="later" onclick="year_later()";> 1 Year Later</button>
-			<button type="button" id="check" onclick="checkNumber()";> Check</button>
-            <br>
-			 <br>
-            <button type="button" id="elliott" onclick="elliott()";> display elliott</button>
-            <br>
-			<br>
-            <button type="button" id="conco" onclick="coco()";> concatinate</button>
-            <br>
-			<br>
-            <input type="text" id="arrayItem" name="TextBox3"></input>
-			<button type="button" id="showArray" onclick="showArray();">Show current array</button>
-            <button type="button" id="addTOArray" onclick="addArray();">add</button>
-			<button type="button" id="deleteFromArray" onclick="deleteFromArray();"> delete</button>
-            <br>
-			
-	
-        <script type="text/javascript">
-		
-		var person ={name: "", age: 0, occupation: ""};
-		
-		var myList = ['Rugby','Football','Lacrosse'];
-		
-		
+	<div id=div1>
+		<br>
+		<button type="text" id="Text1" onclick="add();" ; name="Box1">First Number</button>
+		<br>
+		<br>
+		<button type="text" id="Text2" onclick="square();" name="Box2">Second Number</button>
+		<br>
+	</div>
+	<div id=div2>
+		<h3> Person Object</h3>
+		<input type="text" id="name" name="TextBox1"> name </input>
+		<br>
+		<br>
+		<input type="text" id="age" name="TextBox2"> age </input>
+		<br>
+		<br>
+		<input type="text" id="occ" name="TextBox3"> occupation </input>
+		<br>
+		<br>
+		<button type="button" id="create" onclick="create_person()" ;> create</button>
+		<br>
+		<br>
+		<button type="button" id="later" onclick="year_later()" ;> 1 Year Later</button>
+		<button type="button" id="check" onclick="checkNumber()" ;> Check</button>
+		<br>
+		<br>
+		<button type="button" id="elliott" onclick="elliott()" ;> display elliott</button>
+		<br>
+		<br>
+		<button type="button" id="conco" onclick="coco()" ;> concatinate</button>
+		<br>
+	</div>
+	<div id=div3>
+		<br>
+		<input type="text" id="arrayItem" name="TextBox4"></input>
+		<button type="button" id="showArray" onclick="showArray();">Show current array</button>
+		<button type="button" id="addTOArray" onclick="addArray();">add</button>
+		<button type="button" id="deleteFromArray" onclick="deleteFromArray();"> delete</button>
+		<br>
+	</div>
+	<div id=div4>
+		<br>
+		<button type="button" id="incToConsole" onclick="increment();">increment numbers</button>
+		<br>
+	</div>
+	<div id=div5>
+		<br>
+		<button type="button" id="Fizz" onclick="FizzBuzz();">FizzyBuzzy</button>
+		<br>
+	</div>
+	<div id=div6>
+		<br>
+		<input type="text" id="inputNum" name="TextBox5"> Iteration</input>
+		<br>
+		<br>
+		<button type="button" id="InputNumber" onclick="Iteration();">Compute</button>
+		<br>
+	</div>
+	<div id=div7>
+		<br>
+		<input type="text" id="inputTripNum" name="TextBox6"> triple number</input>
+		<br>
+		<br>
+		<button type="button" id="tripleNumber" onclick="tripNum();">Compute</button>
+		<br>
+	</div>
+	<div id=div8>
+		<br>
+		<button type="button" id="DOMCreate" onclick="DOMCreate();">Create</button>
+
+		<input type="text" id="inputDOM" name="TextBox7"></input>
+
+		<button type="button" id="DOMChange" onclick="DOMChange();">Change</button>
+
+		<button type="button" id="DOMDelete" onclick="DOMDelete();">Delete</button>
+		<br>
+	</div>
+	<div id=div9>
+		Sqaud:
+	</div>
+	<div id=div10>
+		Name:
+	</div>
+	<div id=div11>
+		Name:
+	</div>
+	<div id=div12>
+		Name:
+	</div>
+	<div id=div13>
+		<input type="text" id="search_Input" name="TextBox8"></input>
+		<button type="button" id="Search" onclick="search()">Search</button>
+	</div>
+
+	<script type="text/javascript">
+		var person = { name: "", age: 0, occupation: "" };
+
+		var myList = ['Rugby', 'Football', 'Lacrosse'];
+
+
 		var num1 = 6
 		var num2 = 10
 		var num3 = 3
-		
+
 		function square(num1) {
-		
-		alert(num1 * num1)
-		return num1*num1;
+
+			alert(num1 * num1)
+			return num1 * num1;
 		}
-		
-		function add(num1,num2,num3){
-		alert(num1 + num2 + num3)
-		return num1 + num2 + num3;
+
+		function add(num1, num2, num3) {
+			alert(num1 + num2 + num3)
+			return num1 + num2 + num3;
 		}
-		
-		function create_person(){
-		person.name = document.getElementById("name").value
-		person.age = document.getElementById("age").value *1
-		person.occ = document.getElementById("occ").value
-		alert("name: " + person.name + "\nage: " + person.age + "\noccupation: " + person.occ)
-		
+
+		function create_person() {
+			person.name = document.getElementById("name").value
+			person.age = document.getElementById("age").value * 1
+			person.occ = document.getElementById("occ").value
+			alert("name: " + person.name + "\nage: " + person.age + "\noccupation: " + person.occ)
+
 		}
-		function year_later(){
-		var newValue = person.age ++
-		alert("name: " + person.name + "\nage: " + person.age + "\noccupation: " + person.occ)
+		function year_later() {
+			var newValue = person.age++
+			alert("name: " + person.name + "\nage: " + person.age + "\noccupation: " + person.occ)
 		}
 		function elliott() {
-		var str = "\"My name is elliott\"";
-		var res = str.toUpperCase();
-		document.getElementById("elliott").innerHTML = res;
+			var str = "\"My name is elliott\"";
+			var res = str.toUpperCase();
+			document.getElementById("elliott").innerHTML = res;
 		}
-		function coco(){
-		var x = "Hello" + "dylan"  + " Concatenates int";
-		var y = "5" + 5 + " Concatenates string and int";
-		var z = "Hello" + 5 + " Concatenates string and int";
-		alert(x + " " + y + " " + z);
+		function coco() {
+			var x = "Hello" + "dylan" + " Concatenates int";
+			var y = "5" + 5 + " Concatenates string and int";
+			var z = "Hello" + 5 + " Concatenates string and int";
+			alert(x + " " + y + " " + z);
 		}
-		function deleteFromArray(){
-		myList.pop();
+		function deleteFromArray() {
+			myList.pop();
 		}
-		function addArray(){
-		var item = document.getElementById("arrayItem").value;
-		myList.push(item);
+		function addArray() {
+			var item = document.getElementById("arrayItem").value;
+			myList.push(item);
 		}
-		function showArray(){
-		alert(myList)
+		function showArray() {
+			alert(myList)
 		}
-		function checkNumber () {
-		
-		var entered = "You entered a number between"; 
+		function checkNumber() {
 
-		if (person.age >= 1 && person.age < 19)                   
-  			{alert(entered + " 0 and 19")}
-		else if (person.agen >= 20 &&person.age < 30)
-  			{alert(entered + " 19 and 30")}
-		else if (person.age >= 30 && person.age < 40)
-  			{alert(entered + " 29 and 40")}
-		else if (person.age < 1 || person.age > 100)
-  			{alert("You entered a number less than 1 or greater than 100")}
-		else if (person.age > 100)
-  			{alert("You entered a number greater than 100")}
-		else
-  		{alert("You did not enter a number!")}
-}
-        </script>
-		</body>
+			var entered = "You entered a number between";
+
+			if (person.age >= 1 && person.age < 19)
+			{ alert(entered + " 0 and 19") }
+			else if (person.agen >= 20 && person.age < 30)
+			{ alert(entered + " 19 and 30") }
+			else if (person.age >= 30 && person.age < 40)
+			{ alert(entered + " 29 and 40") }
+			else if (person.age < 1 || person.age > 100)
+			{ alert("You entered a number less than 1 or greater than 100") }
+			else if (person.age > 100)
+			{ alert("You entered a number greater than 100") }
+			else
+			{ alert("You did not enter a number!") }
+		}
+		function increment() {
+			for (var i = 0; i < 10; i++) {
+				if (i % 2 === 0) {
+					console.log(i)
+				}
+				else {
+					console.log(i + " is not divisible by 2");
+				}
+			}
+		}
+		function FizzBuzz() {
+			for (var i = 0; i < 100; i++) {
+				if (i % 5 === 0 && i % 3 === 0) {
+					console.log("FizzBuzz")
+				}
+				else if (i % 5 === 0) {
+					console.log("BUZZ")
+				}
+				else if (i % 3 === 0) {
+					console.log("Fizz")
+				}
+				else {
+					console.log(i);
+				}
+			}
+		}
+		function Iteration() {
+			var input = document.getElementById("inputNum").value * 1
+			var numberBlur = 0;
+			while (input != 1) {
+				switch (input % 3) {
+					case 0:
+						numberBlur = input;
+						input = input / 3;
+						console.log(numberBlur + " can be divided by 3 " + input + " times");
+						break;
+					case 1:
+						numberBlur = input;
+						input--;
+						input = input / 3;
+						console.log(numberBlur + " when -1 can be divided by 3 " + input + " times");
+						break;
+					case 2:
+						numberBlur = input;
+						input++;
+						input = input / 3;
+						console.log(numberBlur + " when +1 can be divided by 3 " + input + " times");
+						break;
+				}
+			}
+		}
+		function tripNum() {
+			var tripNum_String = document.getElementById("inputTripNum").value;
+			var tripNum = 0
+			for (i = 0; i < tripNum_String.length - 1; i++) {
+				if (tripNum_String.substr(i, 1) === tripNum_String.substr(i + 1, 1) && tripNum_String.substr(i + 1, 1) === tripNum_String.substr(i + 2, 1)) {
+					tripNum++;
+
+				}
+			}
+			alert(tripNum);
+
+
+		}
+		//DOM1
+		function DOMCreate() {
+			var dom = document.getElementById("div8");
+			var para = document.createElement("paragraph");
+			para.id = "paragraph";
+			dom.appendChild(para)
+		}
+		function DOMChange() {
+			var node = document.createTextNode(document.getElementById("inputDOM").value);
+			document.getElementById("paragraph").appendChild(node);
+
+
+		}
+		function DOMDelete() {
+			var delPara = document.getElementById("paragraph");
+			document.getElementById("div8").removeChild(delPara);
+		}
+		//JSON1
+		var URL1 = 'https://raw.githubusercontent.com/ewomackqa/JSONDataRepo/master/example.json';
+		var request = new XMLHttpRequest();
+		request.open('GET', URL1);
+		request.responseType = 'json'
+		request.send();
+		request.onload = function () {
+			var requestData = request.response;
+
+			var myH1 = document.createElement('squadName');
+			var myH2 = document.createElement('homeTown');
+			var myH3 = document.createElement('formed');
+			var myH4 = document.createElement('secretBase');
+			var myH5 = document.createElement('active');
+			var myH6 = document.createElement('memebr1');
+			var myH7 = document.createElement('member2');
+			var myH8 = document.createElement('memeber3');
+
+			myH1.textContent = requestData['squadName'];
+			myH2.textContent = requestData['homeTown'];
+			myH3.textContent = requestData['formed'];
+			myH4.textContent = requestData['secretBase'];
+			myH5.textContent = requestData['active'];
+			myH6.textContent = requestData['members'][0].name;
+			myH7.textContent = requestData['members'][1].name;
+			myH8.textContent = requestData['members'][2].name;
+
+			document.getElementById('div9').appendChild(myH1);
+			document.getElementById('div9').appendChild(myH2);
+			document.getElementById('div9').appendChild(myH3);
+			document.getElementById('div9').appendChild(myH4);
+			document.getElementById('div9').appendChild(myH5);
+			document.getElementById('div10').appendChild(myH6);
+			document.getElementById('div11').appendChild(myH7);
+			document.getElementById('div12').appendChild(myH8);
+
+		}
+
+		//JSON2
+
+		var kingName = document.createElement('kingName');
+		var kingCity = document.createElement('kingCity');
+		var kingHouse = document.createElement('kingHouse');
+		var kingYears = document.createElement('kingYears');
+
+
+		var URL2 = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
+		var request2 = new XMLHttpRequest();
+		var requiredData2;
+		request2.open('GET', URL2);
+		request2.responseType = 'json';
+		request2.send();
+
+		request2.onload = function () {
+			requiredData2 = request2.response;
+
+		}
+		function search() {
+			var king = requiredData2.filter((call) => {
+				return call.nm === (document.getElementById("search_Input").value);
+			});
+			kingName.textContent = king[0].nm;
+			kingCity.textContent = king[0].cty;
+			kingHouse.textContent = king[0].hse;
+			kingYears.textContent = king[0].yrs;
+
+			document.getElementById('div13').appendChild(kingName);
+			document.getElementById('div13').appendChild(kingCity);
+			document.getElementById('div13').appendChild(kingHouse);
+			document.getElementById('div13').appendChild(kingYears);
+
+
+		}
+	</script>
+</body>
+
 </html>
