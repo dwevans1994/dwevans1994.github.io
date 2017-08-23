@@ -19,29 +19,53 @@
         <input type="text_milage" id="milage" name="TextBox3"> Milage</input>
         <br>
         <br>
-        <button type="text" id="Text1" onclick="create_vehicle();" ; name="Box1">Check in vehicle</button>
+        <input type="text_reg" id="reg" name="TextBox4"> Registration</input>
+        <br>
+        <br>
+        <button type="text" id="check" onclick="create_vehicle();" ; name="Box1">Check in vehicle</button>
         <br>
     </div>
     <div id=div2>
         <br>
         <button type="text" id="show" onclick="showVehicles();" ; name="Box2">Show Vehicles</button>
+        <div id="dog"></div>
+    </div>
+    <div id=div3>
+        <br>
+        <input type="text_remove" id="removeReg" name="TextBox5"> Registration to remove</input>
+        <br>
+        <br>
+        <button type="text" id="remove" onclick="removeVehicles();" ; name="Box3">Remove Vehicles</button>
+        <br>
+
+
     </div>
 </body>
 <script type="text/javascript">
-    var vehicle = { make: "", model: "", age: 0, milage: 0 };
     var vehicles = [];
 
     function create_vehicle() {
+        var vehicle = { make: "", model: "", age: 0, milage: 0, reg: "" };
         vehicle.make = document.getElementById("make").value
         vehicle.model = document.getElementById("model").value
         vehicle.age = document.getElementById("age").value * 1
         vehicle.milage = document.getElementById("milage").value * 1
+        vehicle.reg = document.getElementById("reg").value
         vehicles.push(vehicle);
-        console.log(vehicles);
+
     }
 
     function showVehicles() {
-        alert(vehicles)
+
+        var a = document.createElement("div");
+        document.getElementById("dog").innerHTML = "";
+        a.innerHTML = vehicles[0].make + "<br>" + vehicles[0].model + "<br>" + vehicles[0].age + "<br>" + vehicles[0].milage + "<br>" + vehicles[0].reg + "<br>"
+        document.getElementById("dog").appendChild(a);
+
+    }
+    function removeVehicles() {
+        var delVeh = document.getElementById("div");
+        document.getElementById("dog").removeChild(delVeh);
     }
 
 </script>

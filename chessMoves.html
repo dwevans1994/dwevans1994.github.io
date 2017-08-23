@@ -1,0 +1,42 @@
+<head>
+
+
+
+</head>
+
+<body>
+    <div id=div1>
+        <br>
+        <button type="text" id="show" onclick="numMoves(input);" name="Box2">code</button>
+        <br>
+</body>
+
+<script type="text/javascript">
+    let input = [13, 11];
+
+    function numMoves(input) {
+        let max;
+        let count = 0;
+        if (input[0] === Math.max(Math.abs(input[0]), Math.abs(input[1]))) {
+            max = Math.abs(input[0]);
+            do {
+                max = max - 2;
+                count++
+            } while (max > 0);
+        } else if (input[0] === input[1]) {
+            if (input[0] === 0 || input[0] % 2 === 1) {
+                count = 2;
+            } else {
+                count = 4;
+            }
+        } else {
+            max = Math.abs(input[1]);
+            do {
+                max = max - 2;
+                count++
+            } while (max > 0);
+        }
+        alert(count);
+    }
+
+</script>
